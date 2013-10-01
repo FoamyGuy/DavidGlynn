@@ -1,0 +1,7 @@
+Inside XMLPullParser.java:
+    Changed TITLE variable from "name" to "title"
+    Changed LINK variable from "urlLink" to "link"
+    Changed ENCLOSURE variable from "imageFile" to "enclosure"
+    Add null check on curItem when parsing xml. If curItem is null it means we haven't starting parsing the first <item> yet (i.e. we are reading channel elements instead of item elements.)
+    change `curItem.setEnclosure(curText);` to `curItem.setLink(curText);` in the if (tagname.equalsIgnoreCase(LINK)) code block.
+    Add a new if statement to the START_TAG section to check for enclosure and pull out the url attribute value.
